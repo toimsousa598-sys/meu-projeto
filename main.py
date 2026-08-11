@@ -1,5 +1,15 @@
-nome = input("Qual é o seu nome? ")
-print(f"Olá, {nome}!")
-print("bem-vindo ao meu primeiro projeto em python!")
+clientes = []
+nome = input("Digite o nome do cliente: ")
+idade = input("Digite a idade do cliente:")
 
+cliente ={
+    "nome": nome,
+    "idade": idade
+
+}
+
+clientes.append(cliente)
+
+print("\nclientes cadastrados com sucesso!\n")
+print(clientes)
 
