@@ -6,7 +6,8 @@ while True:
     print("2. Listar Clientes")
     print("3. Buscar Cliente")
     print("4. Excluir Cliente")
-    print("5. Sair")
+    print("5. Editar Cliente")
+    print("6. Sair")
 
     opcao = input("Escolha uma opção: ")
     if opcao == "1":
@@ -59,8 +60,28 @@ while True:
         if not encontrado:
             print("Cliente não econtrado.")
     elif opcao == "5":
+        nome_editar = input("Digite o nome do cliente que deseja editar:")
+
+        encontrado = False
+
+        for cliente in clientes:
+            if cliente['nome'].lower() == nome_editar.lower():
+                novo_nome = input("Digite o novo nome do cliente: ")
+                nova_idade = input("Digite a nova idade do cliente: ")
+                cliente['nome'] = novo_nome
+                cliente['idade'] = nova_idade
+                print("Cliente atualizado com sucesso!")
+                encontrado = True
+                break
+        if not encontrado:
+            print("Cliente não encontrado.")
+    elif opcao == "6":
         print("Saindo do sistema...")
         break
     else:
-        print("Opção invalida. Por favor, ecolha uma opção válida.")
+        print("Opção invalida. Por favor, escolha uma opção válida.")
+    
         
+
+       
+
