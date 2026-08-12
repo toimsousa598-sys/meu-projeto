@@ -4,21 +4,22 @@ while True:
     print("\n=====SISTEM DE CLIENTES=====")
     print("1. Cadastro de Cliente")
     print("2. Listar Clientes")
-    print("3. Sair")
+    print("3. Buscar Cliente")
+    print("4. Sair")
 
     opcao = input("Escolha uma opção: ")
     if opcao == "1":
         nome = input("Digite o nome do cliente: ")
         idade = input("Digite a idade do cliente: ")
 
-        clinte = {
+        cliente = {
 
             "nome": nome,
             "idade": idade
 
         }
 
-        clientes.append(clinte)
+        clientes.append(cliente)
         print("Cliente cadastrado com sucesso!")
     elif opcao == "2":
         print("\n=====LISTA DE CLIENTES=====")
@@ -29,8 +30,23 @@ while True:
             for cliente in clientes:
                 print(f"Nome: {cliente['nome']}, Idade: {cliente['idade']}")
     elif opcao == "3":
-        print("Programa encerrado.")
+        nome_busca = input("Digite o nome do cliente que deseja buscar: ")
+
+        encontrado = False
+
+        for cliente in clientes:
+            if cliente['nome'].lower() == nome_busca.lower():
+                print(f"Cliente econtrado: Nome: {cliente['nome']}, idade: {cliente['idade']}")
+                print("\nCliente econtrado com sucesso!")
+                print(f"Nome: {cliente['nome']}")
+                print(f"Idade: {cliente['idade']}")
+                encontrado = True
+                break
+        if not encontrado:
+            print("Cliente não encontrado.")
+    elif opcao == "4":
+        print("Saindo do sistema...")
         break
     else:
-        print("Opção invalida. Por favor, tente novamente.")
+        print("Opção invalida. Por favor, ecolha uma opção válida.")
         
