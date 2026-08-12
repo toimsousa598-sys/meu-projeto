@@ -5,7 +5,8 @@ while True:
     print("1. Cadastro de Cliente")
     print("2. Listar Clientes")
     print("3. Buscar Cliente")
-    print("4. Sair")
+    print("4. Excluir Cliente")
+    print("5. Sair")
 
     opcao = input("Escolha uma opção: ")
     if opcao == "1":
@@ -45,6 +46,19 @@ while True:
         if not encontrado:
             print("Cliente não encontrado.")
     elif opcao == "4":
+        nome_excluir = input("Digite o nome do cliente que deseja exluir: ")
+
+        encontrado = False
+
+        for cliente in clientes:
+            if cliente['nome'].lower() == nome_excluir.lower():
+                clientes.remove(cliente)
+                print("Cliente excluido com sucesso!")
+                encontrado = True
+                break
+        if not encontrado:
+            print("Cliente não econtrado.")
+    elif opcao == "5":
         print("Saindo do sistema...")
         break
     else:
