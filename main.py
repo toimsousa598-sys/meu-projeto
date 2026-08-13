@@ -98,6 +98,8 @@ while True:
         break
     else:
         print("Opção invalida. Por favor, escolha uma opção válida.")
+        print("Sistema desenvolvido para estudos de Python.")
+        
     
         
 
