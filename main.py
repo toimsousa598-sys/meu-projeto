@@ -1,4 +1,16 @@
-clientes = []
+import json
+
+def salvar_clientes(clientes):
+    with open("clientes.json", "w") as arquivo:
+        json.dump(clientes, arquivo, indent=4)
+def carregar_clientes():
+    try:
+        with open("clientes.json", "r") as arquuivo:
+            return json.load(arquuivo)
+    except FileNotFoundError:
+        return []
+
+clientes = carregar_clientes()
 
 while True:
     print("\n=====SISTEM DE CLIENTES=====")
@@ -22,6 +34,7 @@ while True:
         }
 
         clientes.append(cliente)
+        salvar_clientes(clientes)
         print("Cliente cadastrado com sucesso!")
     elif opcao == "2":
         print("\n=====LISTA DE CLIENTES=====")
@@ -54,6 +67,8 @@ while True:
         for cliente in clientes:
             if cliente['nome'].lower() == nome_excluir.lower():
                 clientes.remove(cliente)
+                salvar_clientes()
+
                 print("Cliente excluido com sucesso!")
                 encontrado = True
                 break
@@ -70,6 +85,9 @@ while True:
                 nova_idade = input("Digite a nova idade do cliente: ")
                 cliente['nome'] = novo_nome
                 cliente['idade'] = nova_idade
+                
+                salvar_clientes()
+        
                 print("Cliente atualizado com sucesso!")
                 encontrado = True
                 break
