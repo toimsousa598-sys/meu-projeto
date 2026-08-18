@@ -99,8 +99,10 @@ while True:
     else:
         print("Opção invalida. Por favor, escolha uma opção válida.")
         print("Sistema desenvolvido para estudos de Python.")
+        print("Estou trabalhando em uma nova funcionalidade!")
+        print("Nova nova funcionalidade em teste")
         
-    
+     
         
 
        
