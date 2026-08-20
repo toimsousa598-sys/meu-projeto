@@ -25,11 +25,13 @@ while True:
     if opcao == "1":
         nome = input("Digite o nome do cliente: ")
         idade = input("Digite a idade do cliente: ")
+        cpf = input("Digite o CPF do cliente: ")
 
         cliente = {
 
             "nome": nome,
-            "idade": idade
+            "idade": idade,
+            "cpf": cpf
 
         }
 
